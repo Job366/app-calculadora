@@ -1,0 +1,14 @@
+[
+      {
+        "id": 1,
+        "nombre": "Distancia"
+      },
+      {
+        "id": 2,
+        "nombre": "Aceleracion"
+      },
+      {
+        "id": 3,
+        "nombre": "Tiempo"
+      }
+]

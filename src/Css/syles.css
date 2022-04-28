@@ -1,0 +1,186 @@
+@font-face {
+    font-family: "Spaced OTF";
+    src: url(/src/Assets/Fonts/Kalpazan-PersonalUse.otf) format("truetype");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #677584;
+}
+
+.container{
+    width: 90%;
+    max-width: 1080px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);    /*grid-template-columns: repeat(auto-fit, minmax(5, 1fr));*/
+    grid-template-rows: repeat(7, auto);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+
+    /*DISTRIBUCION DE FILAS Y COLUMNAS*/
+    grid-template-areas: "header_wrapper header_wrapper header_wrapper header_wrapper "
+                         "sidebar content_wrapper  content_wrapper content_wrapper"
+                         "sidebar content_wrapper  content_wrapper content_wrapper"
+                         "sidebar content_wrapper  content_wrapper content_wrapper"
+                         "sidebar content_wrapper  content_wrapper content_wrapper"
+                         "sidebar content_wrapper  content_wrapper content_wrapper"
+                         "footer footer footer footer";
+}
+
+.container > div{
+    background-color: #D1FFDB;
+    border-radius: 10px;
+}
+
+.container .header_wrapper {
+    grid-area: header_wrapper;
+    background-color: #334252;
+    width: 100%;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.header_wrapper h1{
+    text-align: center;
+    font-family: "Spaced OTF";
+    font-size: 50px;
+    color: rgb(114, 218, 56);
+}
+
+
+.container .content_wrapper{
+    grid-area: content_wrapper;
+    background-color: #222937
+}
+
+.calc{
+    position: relative;
+}
+
+.formulario{
+    display: flex;
+
+    justify-content: space-evenly;
+    align-items: center;
+
+    flex-wrap: wrap;
+    align-content: space-around;
+
+    height: 100%;
+    /*border: 1px solid red;*/
+    padding: 15px;
+    gap: 5px;
+}
+
+.formulario p{
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 1.5 rem;
+    font-weight: 400;
+    word-spacing: 7px;
+    text-transform: uppercase;
+    color: rgb(187, 247,123);
+}
+
+.formulario_input{
+    padding: 20px;
+}
+
+.formulario_input label{
+    display: block;
+    padding-bottom: 0.3em;
+    color: rgb(187, 247,123);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.formulario_input-value{
+    border-width: 0 0 0.1em;
+    border-color: #fff;
+    border-style: solid;
+    width: 100%;
+    height: 25px;
+    padding-top: 0.2em;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+
+/*.formulario textarea{
+    border: 0.1em solid #fff;
+    border-radius: 0.5em;
+    width: 100%;
+    box-shadow: 0;
+    background: transparent;
+    color: #fff;
+}*/
+
+
+
+.calcular{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px auto;
+}
+
+.calcular_button{
+    border-radius: 10%;
+    background-color: #34394463;
+    width: 300px;
+    padding: 15px;
+    margin: 15px auto;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.calcular_button a{
+    text-decoration: none;
+    color:rgb(187, 247,123);
+}
+
+.resultado_value p{
+    color:rgb(187, 247,123);
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.resultado_value span{
+    color: #3FE0D0;
+}
+
+
+.container .sidebar{
+    grid-area: sidebar;
+    background-color: #222937;
+}
+
+.container .footer{
+    grid-area: footer;
+    background-color: #3FE0D0;
+}
+
+/*RESPONSIVE*/
+
+@media screen and (max-width: 768px){
+    body{
+        background-color: #000;
+    }
+    .container{
+    grid-template-areas: "header_wrapper header_wrapper header_wrapper header_wrapper header_wrapper"
+                         "content_wrapper content_wrapper content_wrapper content_wrapper content_wrapper"
+                         "content_wrapper content_wrapper content_wrapper content_wrapper content_wrapper"
+                         "content_wrapper content_wrapper content_wrapper content_wrapper content_wrapper"
+                         "sidebar sidebar sidebar sidebar sidebar"
+                         "sidebar sidebar sidebar sidebar sidebar"
+                         "footer footer footer footer footer";
+    }
+
+}
